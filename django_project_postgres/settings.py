@@ -30,15 +30,26 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
+# django_project/settings.py
 INSTALLED_APPS = [
-    'django.contrib.admin',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
-    'accounts.apps.AccountsConfig',
+"django.contrib.admin",
+"django.contrib.auth",
+"django.contrib.contenttypes",
+"django.contrib.sessions",
+"django.contrib.messages",
+"django.contrib.staticfiles",
+# 3rd-party apps
+"rest_framework", # new
+# Local
+"accounts.apps.AccountsConfig",
+"posts.apps.PostsConfig",
 ]
+REST_FRAMEWORK = { # new
+"DEFAULT_PERMISSION_CLASSES": [
+"rest_framework.permissions.AllowAny",
+],
+}
+
 
 AUTH_USER_MODEL = "accounts.CustomUser"
 
